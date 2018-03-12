@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>LarryMS系统更新日志</title>
+	<meta name="keywords" content="" />
+    <meta name="description" content="LarryCMS Version:1.09" />
+	<meta name="Author" content="larry" />
+	<meta name="renderer" content="webkit">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">	
+	<meta name="apple-mobile-web-app-capable" content="yes">	
+	<meta name="format-detection" content="telephone=no">	
+	<link rel="Shortcut Icon" href="/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="../../common/layui/css/layui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../css/base.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../css/update.css" media="all">
+</head>
+<body>
+    <div class="larryms-update">
+    	<blockquote class="layui-elem-quote larryms-update-title">
+            LarryMS系统更新日志：<span class="larryms-green">（完全基于Layui的后台极速开发框架LarryMS,正式启动商业付费版）</span>
+        </blockquote>
+        <div class="margin-15"></div>
+        <ul class="layui-timeline">
+        	<li class="layui-timeline-item">
+                <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                <div class="layui-timeline-content layui-text">
+                     <h3 class="layui-timeline-title">larryMS 2.07beta2更新（2018年2月5日）</h3>
+                     <ul>
+                     	 <li>修复beta1中因tab缓存问题导致刷新主体框架后的tab错乱bug</li>
+                         <li>修复beta1中清除缓存提示层通过关闭按钮销毁后导致的页面假死,修复锁屏、退出功能</li>                       
+                     	 <li>全新的主题设置方式，支持tab选项卡缓存、tab选项卡切换刷新、预定义主题、自定义配色、页脚开关</li>
+                     	 <li>进一步优化菜单，贴近RESTful风格</li>
+                     	 <li>完善beta1中未来得及完成的功能如锁屏、消息通知等；会员群内大家所提需求及丰富的子页面等将在春节后的larryMS2.08中发布</li>
+                         <li><s>新增消息中心及页面级打开方式、全屏切换、自定义定义布局</s></li>
+                         <li><s>新增子页面util示例</s></li>
+                         <li><s>新增页面级tab新增：包含iframe子页tab新增、框架内非导航菜单tab选项卡处理（beta3中更新...）</s></li>
+                         <li style="color: #FF5722;">
+                           <h3>升级注意事项</h3>
+                           <ul>
+                              <li>为方便大家后续更新和规范统一，对目录做了细微的调整，若是覆盖方式升级，在覆盖前请务必先删除common/lib目录</li>
+                              <li>非必要情况下，建议尽量不要修改扩展以免出现各类异常，后台应用集中在/common/lib/larryms目录中，该目录下的内容大家可以根据需要进行自定义</li>
+                              <li>覆盖升级后，注意清理浏览器缓存</li>
+                           </ul>
+                         </li>
+                     </ul>
+                </div>
+            </li>
+
+            <li class="layui-timeline-item">
+                <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                <div class="layui-timeline-content layui-text">
+                    <h3 class="layui-timeline-title">larryMS 2.07beta1更新（2018年1月16日）</h3>
+                    <ul>
+                    	<li>为响应群内伙伴们的强烈要求，发布了2.07过渡版，是在2.06版的基础上以单入口模块自动加载方式构建</li>
+                    	<li>进一步优化左侧三级导航菜单及顶部导航菜单的开启关闭切换</li>
+                        <li>新增字体库扩展；以fontClass别名方式支持，默认字体库为layui-icon/larry-icon/fa ;若这些字体不能满足需求可自定义加入控制菜单（后续官网会给出详细教程）</li>
+                        <li>优化larryms2.02版本中的系列功能（比如iframe性能问题、第三方插件引入更加智能化）</li>
+                        <li>智能化多模块加载，彻底解决后台开发中的前端资源路径问题，不会有larryms2.02中繁琐的路径配置问题，均改为页面中简单分配</li>
+                    </ul>
+                </div>
+            </li>
+            
+            <li class="layui-timeline-item">
+                <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                <div class="layui-timeline-content layui-text">
+                     <h3 class="layui-timeline-title">larryMS 2.06更新（2017年12月20日）</h3>
+                     <ul>
+                     	<li>实现tab选项卡切换与左侧导航和顶部导航自动一一对应切换</li>
+                     	<li>进一步优化tab选项卡多页签，支持右侧内容区切换时菜单导航自动定位跟随切换(若是开启顶部导航也支持顶部顶级导航自动切换)</li>
+                     	<li>纯响应式折叠菜单，根据屏幕大小进行默认折叠菜单显示（也可以手动切换）、主题设置</li>
+                        <li>这一版本中集中在后台基础核心框架上，有太多细节功能就不一一赘述，比较2.02版本做了非常大的改进</li>
+                     </ul>
+                </div>
+                
+            </li>
+
+            <li class="layui-timeline-item">
+                <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                <div class="layui-timeline-content layui-text">
+                     <h3 class="layui-timeline-title">larryMS 2.05更新（2017年11月30日）</h3>
+                     <ul>
+                     	<li>新增左侧三级菜单，纯响应式支持，优化顶部菜单参数控制(即可topMenu参数开启或关闭顶部导航菜单，理论上可达5级菜单) </li>
+                     	<li>
+                     		优化解决iframe加载延迟过大时阻塞导致页面假死等核心性能问题.
+                     	</li>
+                     </ul>
+                </div>
+                
+            </li>
+
+            <li class="layui-timeline-item">
+                <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                <div class="layui-timeline-content layui-text">
+                     <h3 class="layui-timeline-title">larryMS 2.02更新（2017年9月20日）</h3>
+                     <ul>
+                     	<li>修复tab选项卡左右滑动反人类的移动方式，改为向左箭头则左向移动，向右箭头则向右移动</li>
+                        <li>修复spreadOne设置问题，larryTab组件初始化时可以通过设置spreadOne:true 控制左侧菜单导航同时展开个数及样式</li>
+                        <li>修正路径为相对路径，可以放置在任意目录下（注意：backstage/js/common.js 的layui.config路径需要使用绝对路径，如果你放置的larryMS模板处于非根目录需要对此进行修改为对应绝对路径）;同时增加可直接文件夹非部署环境打开版本</li>
+                        <li>新增larry-icon扩展图标至1142个（后期还会在此基础上进行适当补充和精简，以求完美实用后台的图标库）</li>
+                        <li>修复360浏览器和搜狗浏览器极速模式、Edge浏览器下的部分不兼容</li>
+                        <li>修复在开启选项卡切换刷新后，右侧选项卡点击切换刷新</li>
+                        <li>优化键盘按键事件</li>
+                     </ul>
+                </div>
+            </li>
+
+            <li class="layui-timeline-item">
+                <i class="layui-icon layui-timeline-axis">&#xe756;</i>
+                <div class="layui-timeline-content layui-text">
+                     <h3 class="layui-timeline-title">larryMS 2.0发布（2017年8月31日）</h3>
+                     <ul>
+                     	<blockquote class="layui-elem-quote">
+                            由于开源环境所致波折和一系列个人原因，为了持续发展，决定由LarryCMS后台模板免费开源 转为LarryMS小额付费版本，同时基于ThinkPHP5的LarryCMS系统也正式纳入开发计划中；因此LarryMS2.0作为larryMS小额付费版正式启航
+                        </blockquote>
+                        <li>
+                        	larryCMS后台模板更名为LarryMS 提供纯html后台极速开发框架
+                        </li>
+                        <li>针对layui2.x 重构LarryMS，未使用任何第三方UI框架，使用layui的栅格、响应式布局的纯html版后台管理系统模板,开箱即用
+                        </li>
+                        <li>增加larryTab组件用于菜单及tab选项卡相关处理，只需传入菜单json数据，进行智能处理<span class="layui-word-aux">（larryTab新特性作如下说明：）</span>
+                            <ul>
+                                <li>只需传入json菜单数据即可，支持不同菜单分级需求，神马 一级、二级、三级、四级菜单统统都支持，想要第五级菜单？这个需求太变态了，绝对不支持！
+                                </li>
+                                <li>新增tab选项卡缓存sessionStorage，缓存可在主题设置中开启或关闭，新增定位当前选项卡等系列常用操作，智能tab选项卡自动定位，左右滑动等诸如一些小功能就不在此一一赘述
+                                </li>
+                                <li>应群内伙伴要求新增tab选项卡切换打开时自动刷新配置(在设置主题中开启，默认关闭)，另外也可通过传入参数autoRefresh：true进行开启；增加自定义主题接口，后期开放可自定义主题配色命名存档入库
+                                </li>
+                                <li>主题设置、皮肤自定义、全屏，锁屏，缓存清理等功能，追求极致性能体验、灵活自由、使用简单，不断优化后台模板基础框架功能。
+                                </li>
+                            </ul>
+                        </li>
+                        <li>新增完美的larryMenu右键菜单组件，智能边界定位<span class="layui-word-aux">（iframe及父级框架无缝切换,完全自定义的右键菜单功能接口：传入菜单名和对应功能函数，在任何区域都可以拥有不同的右键菜单）</span></li>
+                        <li>新增larryMS公共基础common组件，比如如jq三方插件动态加载，即调即用，还可以自定义使用不同jq版本（默认使用layui提供的稳定版本的jquery），页面无需引入一大堆js，只需layui.js，larrycms.js及自定义的js文件即可，常用信息提示、confirm、message、warning、error、successd信息提示,等等细小功能</li>
+                        <li>新增ajaxGP组件，主要用于ajax-get、ajax-post处理，以及服务端开发ajax异步调试 底层信息处理<span class="layui-word-aux">（本人同时也是php菜鸟一枚，常苦于ajax异步情况下调试不爽，{ 不要说使用postman等工具 }，直接使用layer弹层显示服务端调试输出信息）</span>
+                        </li>
+                        <li>在完成后台管理系统基础功能之外，新增一些常用示例页面：如用户管理、文章列表、权限管理、栏目管理、系统参数设置，layui：table、form、upload、laypage的使用用例等页面<span class="layui-word-aux">（其余系统子页过于庞大，业余时间写不过来后续再更新）</span>
+                        </li>
+                        <li>扩展layui官方字体图标库，larry-icon 600个字体库,使用完全与layui相同，互不冲突相得益彰，新增hover,animate等第三方css3动画，鼠标点击自动复制到剪贴板，省时又省力
+                        </li>
+                        <li>新增larryMS使用文档，对各个组件使用及参数使用文档进行简要说明
+                        </li>
+                        <li>新增移动端简单适配，三级联动、下拉框多选<span class="layui-word-aux">（根据时间情况加入新版本中发布）</span>
+                        </li>
+                        <li>针对锁屏功能说明：锁屏后增加了密码验证以及给出真实应用时后台实现方法；但锁屏后再次刷新框架锁屏失效，此并非bug或功能问题，因为锁屏需要场景代入后台交互，将后台实现方法已写在里面只是注释了，锁屏这块没有使用sessionStorage或layui.data存储去模拟，因为此次更新细小功能太多这个觉得意义不大就放下了
+                        </li>
+                     </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+<!-- 加载js文件-->
+<script type="text/javascript" src="../../common/layui/layui.js"></script>
+<script type="text/javascript">
+layui.config({
+   version:"2.0.7",
+   base:'../../common/'
+}).extend({
+    larry:'js/base'
+}).use('larry');
+</script>
+</body>
+</html>
