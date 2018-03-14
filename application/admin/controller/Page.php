@@ -1,7 +1,7 @@
 <?php
 namespace app\admin\controller;
 use app\admin\controller\Common;
-class Html extends Common
+class Page extends Common
 {
     public function amdin()
     {
@@ -13,9 +13,9 @@ class Html extends Common
         return $this->fetch();
     }
 
-    public function message()
+    public function news()
     {
-        return $this->fetch();
+        return $this->fetch('page/news/newsList');
     }
 
     public function temp()
