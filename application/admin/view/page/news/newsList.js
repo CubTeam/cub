@@ -5,11 +5,10 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
         laydate = layui.laydate,
         laytpl = layui.laytpl,
         table = layui.table;
-
     //新闻列表
     var tableIns = table.render({
         elem: '#newsList',
-        url : '../../json/newsList.json',
+        url : '/static/admin/json/newsList.json',
         cellMinWidth : 95,
         page : true,
         height : "full-125",
