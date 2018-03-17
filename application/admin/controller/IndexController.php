@@ -2,7 +2,7 @@
 namespace app\admin\controller;
 use app\admin\controller\Common;
 
-class Index extends Common
+class IndexController extends Common
 {
     public function index()
     {

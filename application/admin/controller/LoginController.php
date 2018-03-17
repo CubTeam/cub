@@ -2,7 +2,7 @@
 namespace app\admin\controller;
 use think\Controller;
 use app\admin\model\Admin;
-class Login extends Controller
+class LoginController extends Controller
 {
     public function index()
     {
