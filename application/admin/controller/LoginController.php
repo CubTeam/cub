@@ -1,12 +1,13 @@
 <?php
 namespace app\admin\controller;
 use think\Controller;
-use app\admin\model\Admin;
+use app\admin\model\AdminModel;
 class LoginController extends Controller
 {
     public function index()
     {
         if(request()->isPost()){
+            dump(request()->isPost());
             $this->check(input('code'));
             $admin=new Admin();
             $num=$admin->login(input('post.'));
