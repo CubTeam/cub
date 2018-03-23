@@ -6,7 +6,7 @@ class IndexController extends Common
 {
     public function index()
     {
-        return $this->fetch();
+        return $this->view();
     }
 
     //导航数据接口（测试）

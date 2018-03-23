@@ -15,5 +15,4 @@ class Common extends Controller
 
     }
 
-
 }
