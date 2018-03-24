@@ -6,9 +6,15 @@ class IndexController extends Common
 {
     public function index()
     {
-        return $this->view();
+        //主体框架
+        return view();
     }
 
+    public function main()
+    {
+        //iframe页面
+        return view();
+    }
     //导航数据接口（测试）
     function json(){
         $arr = array(

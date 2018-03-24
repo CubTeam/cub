@@ -19,7 +19,7 @@
 		<p align="center" class="login_face">Login</p>
 		<div class="layui-form-item input-item">
 			<label for="userName">用户名</label>
-			<input type="text" placeholder="请输入用户名"  id="name" class="layui-input" lay-verify="required">
+			<input type="text" placeholder="请输入用户名" autocomplete="off" id="name" class="layui-input" lay-verify="required">
 		</div>
 		<div class="layui-form-item input-item">
 			<label for="password">密码</label>
@@ -28,11 +28,11 @@
 		<div class="layui-form-item input-item" id="imgCode">
 			<label for="code">验证码</label>
 			<input type="text" placeholder="请输入验证码" autocomplete="off" id="code" lay-verify='required' class="layui-input" style="width:100px;float:left;">
-			<img src="{:captcha_src()}" alt="captcha" onclick="this.src='{:captcha_src()}?'+Math.random();" />
+			<img src="{:captcha_src()}"  id='src' alt="captcha" onclick="this.src='{:captcha_src()}?'+Math.random();" />
 
 		</div>
 		<div class="layui-form-item">
-			<button class="layui-btn layui-block" lay-filter="login" lay-submit>登录</button>
+			<button class="layui-btn layui-block" lay-filter="login" lay-submit  id='sub'>登录</button>
 		</div>
 		<div class="layui-form-item layui-row">
 			<a href="javascript:;" class="seraph icon-qq layui-col-xs4 layui-col-sm4 layui-col-md4 layui-col-lg4"></a>
@@ -65,17 +65,49 @@
    		   code: $('#code').val(),
    		 },
    		 function(data,status){
-   		   alert("数据: " + data + "状态: " + status);
+   		   back(data,status);
    		 });
-        return false;
-        setTimeout(function(){
-            window.location.href = "/layuicms2.0";
-        },1000);
         return false;
     })
     //提交表单回调函数
-    function back(){
-
+    function back(data,status){
+    	if(status!='success'){
+    		layer.msg('登陆异常！');
+    		movesub()
+    	}
+		switch(data){
+			case 500:
+				layer.msg('验证码错误!');
+				$('#code').val('');
+				$('#code').focus();
+				 movesub()
+				break;
+			case 404:
+				layer.msg('账号不存在！');
+				$('#name').focus();
+				 movesub()
+				break;
+			case 505:
+				layer.msg('密码错误！');
+				$('#password').val('');
+				$('#password').focus();
+				 movesub()
+				break;
+			case 200:
+				layer.msg('登陆成功!');
+				setTimeout(function(){
+					window.location.href ="{:url('index/index')}";
+				},1500);
+				break;
+			default:
+				layer.msg('登陆异常!');
+				movesub()
+		}
+    }
+    //恢复登陆按钮状态
+    function movesub(){
+    	$('#sub').text("登录").removeAttr("disabled").removeClass("layui-disabled");
+    	$('#src').attr('src','/captcha.html?'+Math.random());
     }
     //表单输入效果
     $(".loginBody .input-item").click(function(e){

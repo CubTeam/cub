@@ -2,38 +2,49 @@
 namespace app\admin\controller;
 use think\Controller;
 use app\admin\model\AdminModel;
+
 class LoginController extends Controller
 {
     public function index()
     {
         if(request()->isPost()){
-            dump(request()->post());
-            die;
-            $this->check(input('code'));
-            $admin=new Admin();
-            $num=$admin->login(input('post.'));
-            if($num==1){
-                $this->error('用户不存在！');
+            //验证验证码
+            $check=$this->check(input('code'));
+            if($check==500){
+                //验证码错误
+                return 500;
             }
-            if($num==2){
-                $this->success('登录成功！',url('index/index'));
+            $data=input('param.');
+            $admin=new AdminModel();
+            $num=$admin->login($data);
+            //验证账号
+            switch ($num) {
+                case '404':
+                //账号不存在
+                    return 404;
+                    break;
+                case '505':
+                //密码错误
+                    return 505;
+                    break;
+                case '200':
+                //登陆成功
+                    return 200;
+                    break;
             }
-            if($num==3){
-                $this->error('密码错误！');
-            }
-            return;
+
         }
         return view();
     }
 
 
     // 验证码检测
-    public function check($code='')
+    function check($code='')
     {
         if (!captcha_check($code)) {
-            $this->error('验证码错误');
+           return 500;
         } else {
-            return true;
+           return 200;
         }
     }
 
