@@ -7,7 +7,8 @@ class LoginController extends Controller
     public function index()
     {
         if(request()->isPost()){
-            dump(request()->isPost());
+            dump(request()->post());
+            die;
             $this->check(input('code'));
             $admin=new Admin();
             $num=$admin->login(input('post.'));

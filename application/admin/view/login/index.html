@@ -12,13 +12,14 @@
 	<link rel="icon" href="favicon.ico">
 	<link rel="stylesheet" href="__STATIC__/layui/css/layui.css" media="all" />
 	<link rel="stylesheet" href="__ADMIN__/css/public.css" media="all" />
+
 </head>
 <body class="loginBody">
-	<form class="layui-form">
-		<div class="login_face"><img src="__ADMIN__/images/face.jpg" height="110px" class="userAvatar"></div>
+	<form class="layui-form" style="opacity: 0.85;background-color: #5b6169;">
+		<p align="center" class="login_face">Login</p>
 		<div class="layui-form-item input-item">
 			<label for="userName">用户名</label>
-			<input type="text" placeholder="请输入用户名" autocomplete="off" id="userName" class="layui-input" lay-verify="required">
+			<input type="text" placeholder="请输入用户名"  id="name" class="layui-input" lay-verify="required">
 		</div>
 		<div class="layui-form-item input-item">
 			<label for="password">密码</label>
@@ -26,8 +27,9 @@
 		</div>
 		<div class="layui-form-item input-item" id="imgCode">
 			<label for="code">验证码</label>
-			<input type="text" placeholder="请输入验证码" autocomplete="off" id="code" class="layui-input">
-			<img src="__ADMIN__/images/code.jpg">
+			<input type="text" placeholder="请输入验证码" autocomplete="off" id="code" lay-verify='required' class="layui-input" style="width:100px;float:left;">
+			<img src="{:captcha_src()}" alt="captcha" onclick="this.src='{:captcha_src()}?'+Math.random();" />
+
 		</div>
 		<div class="layui-form-item">
 			<button class="layui-btn layui-block" lay-filter="login" lay-submit>登录</button>
@@ -55,12 +57,26 @@
     //登录按钮
     form.on("submit(login)",function(data){
         $(this).text("登录中...").attr("disabled","disabled").addClass("layui-disabled");
+        //提交表单
+        $.post("{:url('login/index')}",
+   		 {
+   		   name:$('#name').val(),
+   		   password: $('#password').val(),
+   		   code: $('#code').val(),
+   		 },
+   		 function(data,status){
+   		   alert("数据: " + data + "状态: " + status);
+   		 });
+        return false;
         setTimeout(function(){
             window.location.href = "/layuicms2.0";
         },1000);
         return false;
     })
+    //提交表单回调函数
+    function back(){
 
+    }
     //表单输入效果
     $(".loginBody .input-item").click(function(e){
         e.stopPropagation();
