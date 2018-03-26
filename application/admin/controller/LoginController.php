@@ -3,6 +3,7 @@ namespace app\admin\controller;
 use think\Controller;
 use app\admin\model\AdminModel;
 
+//登陆模块
 class LoginController extends Controller
 {
     public function index()
