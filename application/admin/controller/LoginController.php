@@ -1,7 +1,7 @@
 <?php
 namespace app\admin\controller;
 use think\Controller;
-use app\admin\model\AdminModel;
+use app\admin\model\UserModel;
 
 //登陆模块
 class LoginController extends Controller
@@ -16,7 +16,7 @@ class LoginController extends Controller
                 return 500;
             }
             $data=input('param.');
-            $admin=new AdminModel();
+            $admin=new UserModel();
             $num=$admin->login($data);
             //验证账号
             switch ($num) {

@@ -1,7 +1,7 @@
 <?php
 namespace app\admin\model;
 use think\Model;
-class AdminModel extends Model
+class UserModel extends Model
 {
 
    public function addadmin($data){
@@ -55,7 +55,7 @@ class AdminModel extends Model
     }
 
     public function login($data){
-        $admin=new AdminModel;
+        $admin=new UserModel;
         $result=$admin->getByName($data['name']); //查询name字段中有没有这个值存在
         if(!$result){
              return 404; //用户不存在的情况
