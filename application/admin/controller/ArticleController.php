@@ -1,13 +1,14 @@
 <?php
 namespace app\admin\controller;
-use app\admin\model\Cate as CateModel;
-use app\admin\model\Article as ArticleModel;
+use app\admin\model\CateModel;
+use app\admin\model\ArticleModel;
 use app\admin\controller\Common;
-class Article extends Common
+
+class ArticleController extends Common
 {
 
-    public function lst(){
-        $artres=db('article')->field('a.*,b.catename')->alias('a')->join('bk_cate b','a.cateid=b.id')->order('a.id desc')->paginate(2);
+    public function index(){
+        $artres=db('article')->field('a.*,b.catename')->alias('a')->join('cate b','a.cateid=b.id')->order('a.id desc')->paginate(2);
 
         $this->assign('artres',$artres);
         return view();
