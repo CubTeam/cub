@@ -1,4 +1,7 @@
 <?php
+//auth:三石兄
+//time:2018.3.28
+//title:后台菜单
 namespace app\admin\controller;
 use app\admin\controller\Common;
 use app\admin\model\MenuModel;
@@ -7,28 +10,16 @@ class MenuController extends Common
 {
     public function index()
     {
-        $a=new MenuModel;
-        $aa=$a->list();
-        return json($aa);
+       return view();
     }
 
-    //导航数据接口（测试）
-    public function nav(){
-        $arr = array(
-            'contentManagement'=>[[
-                "title"=>"文章列表",
-                "icon"=>"icon-text",
-                "href"=>"page/news/newsList.html",
-                "spread"=>false
-                                ],[
-                "title"=>"文表",
-                "icon"=>"icon-text",
-                "href"=>"page/news/newsList.html",
-                "spread"=>false
-                                ]],
-            'pic'=>2,
-            'size'=>3
-            );
-    return json($arr);
+    //后台菜单数据接口
+    public function nav()
+    {
+        //调用menu模型
+       $result=new MenuModel;
+       $data=$result->list();
+       return json($data);
     }
+
 }
