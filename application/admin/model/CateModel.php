@@ -1,7 +1,7 @@
 <?php
 namespace app\admin\model;
 use think\Model;
-class Cate extends Model
+class CateModel extends Model
 {
     protected static function init()
     {
@@ -9,7 +9,7 @@ class Cate extends Model
       //     dump($cate->pid); die;
       // });
 
-      Cate::event('before_delete',function(){
+      CateModel::event('before_delete',function(){
           dump(111); die;
           return false;
       });
@@ -49,7 +49,7 @@ class Cate extends Model
         return $arr;
     }
 
-    
+
 
 
 
