@@ -1,3 +1,6 @@
 .idea
 *.log
+<<<<<<< HEAD
 *.yml
+=======
+>>>>>>> 32b98eaa6920ca07b8a024f3ae680fdde852dae8
