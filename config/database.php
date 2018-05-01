@@ -13,13 +13,13 @@ return [
     // 数据库类型
     'type'            => 'mysql',
     // 服务器地址
-    'hostname'        => '127.0.0.1',
+    'hostname'        => '47.100.41.230',
     // 数据库名
     'database'        => 'cub',
     // 用户名
-    'username'        => 'root',
+    'username'        => 'cub',
     // 密码
-    'password'        => 'root',
+    'password'        => 'cub',
     // 端口
     'hostport'        => '',
     // 连接dsn
@@ -27,7 +27,7 @@ return [
     // 数据库连接参数
     'params'          => [],
     // 数据库编码默认采用utf8
-    'charset'         => 'utf8',
+    'charset'         => 'utf8mb4',
     // 数据库表前缀
     'prefix'          => '',
     // 数据库调试模式
