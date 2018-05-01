@@ -9,6 +9,6 @@
 
 2018-4-09  ----------- 初步完成前端首页模板
 
-前端演示地址：http://www.huangj.site/cub/
+前端演示地址：http://www.huangj.site/
 
 
