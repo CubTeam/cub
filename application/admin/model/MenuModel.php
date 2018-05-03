@@ -9,7 +9,9 @@ class MenuModel extends Model
 {
 
 public function list(){
-        $result = MenuModel::all(); //获取所有菜单数据
+        $result = MenuModel::all(); //获取所有菜单数据0
+        $a = $this->getson($result,0);
+        dump($a);die;
         $class = MenuModel::field('father')->group('father')->select(); //获取顶级菜单
         $array=array();
         $array_is=array();
@@ -32,6 +34,18 @@ public function list(){
         $result=$this->merge($array,$array_is);
         return $result;
       }
+
+public function getson($tree,$id)
+{
+  $arr = array();
+  foreach($tree as $val){
+    if($val['parent_id'] == $id){
+      $val['parent'] = $this->getson($tree,$val['id']);
+      $arr[] = $val;
+    }
+  }
+  return $arr;
+}
 
 public function son($val){
   //处理子菜单的数组格式
