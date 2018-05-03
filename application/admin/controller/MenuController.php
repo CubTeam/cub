@@ -13,6 +13,20 @@ class MenuController extends Common
        return view();
     }
 
+    //菜单列表数据
+    public function select()
+    {
+      $result = new MenuModel;
+      $data = $result->select();
+      $count = count($data);
+      return json(['code' =>0,'msg' = >'','count' => $count,$data[{}]])
+    }
+    //添加菜单
+    public function add()
+    {
+      echo 'asd';
+    }
+
     //后台菜单数据接口
     public function nav()
     {

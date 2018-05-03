@@ -1,6 +1,6 @@
 <?php
 //auth:三石兄
-//time:2018.3.28
+//time:2018.5.4
 //title:后台菜单数据处理
 //note: 这里的代码都是根据自己想法写的，感觉写的有点复杂了，先这样写着，等写菜单管理模块的时候借鉴别人的代码后再考虑优化或者重写
 namespace app\admin\model;
@@ -8,10 +8,15 @@ use think\Model;
 class MenuModel extends Model
 {
 
-public function list(){
+public function select()
+{
+    $result = MenuModel::all();
+    return $result;
+}
+public function list()
+{
         $result = MenuModel::all(); //获取所有菜单数据0
-        $a = $this->getson($result,0);
-        dump($a);die;
+        // $a = $this->getson($result,0);
         $class = MenuModel::field('father')->group('father')->select(); //获取顶级菜单
         $array=array();
         $array_is=array();
@@ -46,7 +51,17 @@ public function getson($tree,$id)
   }
   return $arr;
 }
-
+public function getup($tree,$up)
+{
+     $arr = array();
+  foreach($tree as $val){
+    if($val['father'] == $up){
+      $val[] = $this->getson($tree,$val['id']);
+      $arr[] = $val;
+    }
+  }
+  return $arr;
+}
 public function son($val){
   //处理子菜单的数组格式
         $arr=array(
