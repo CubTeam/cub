@@ -19,7 +19,7 @@ class MenuController extends Common
       $result = new MenuModel;
       $data = $result->select();
       $count = count($data);
-      return json(['code' =>0,'msg' = >'','count' => $count,$data[{}]])
+      return json(['code' =>0,'msg' =>'','count' => $count,'data'=>$data]);
     }
     //添加菜单
     public function add()

@@ -9,7 +9,7 @@ layui.use(['form','layer','laydate','table','laytpl','element'],function(){
     //新闻列表
     var tableIns = table.render({
         elem: '#newsList',
-        url : './admin/menu/select',
+        url : '/admin/menu/select',
         cellMinWidth : 95,
         page : true,
         height : "full-125",
@@ -18,17 +18,15 @@ layui.use(['form','layer','laydate','table','laytpl','element'],function(){
         id : "newsListTable",
         cols : [[
             {type: "checkbox", fixed:"left", width:50},
-            {field: 'newsId', title: 'ID', width:60, align:"center"},
-            {field: 'newsName', title: '文章标题', width:350},
-            {field: 'newsAuthor', title: '发布者', align:'center'},
-            {field: 'newsStatus', title: '发布状态',  align:'center',templet:"#newsStatus"},
-            {field: 'newsLook', title: '浏览权限', align:'center'},
-            {field: 'newsTop', title: '是否置顶', align:'center', templet:function(d){
-                return '<input type="checkbox" name="newsTop" lay-filter="newsTop" lay-skin="switch" lay-text="是|否" '+d.newsTop+'>'
-            }},
-            {field: 'newsTime', title: '发布时间', align:'center', minWidth:110, templet:function(d){
-                return d.newsTime.substring(0,10);
-            }},
+           // {field: 'list_oder', title: '排序', width:60, align:"center"},
+            {field: 'id', title: 'ID', width:60, align:"center"},
+            {field: 'parent_id', title: '父级',width:60,align:"center"},
+            {field: 'type', title: '菜单类型', align:'center'},
+            {field: 'status', title: '菜单状态',  align:'center',templet:"#newsStatus"},
+            {field: 'app', title: '应用', align:'center'},
+            {field: 'controller', title: '控制器', align:'center'},
+            {field: 'action', title: '方法', align:'center'},
+            {field: 'icon', title: '图标', align:'center'},
             {title: '操作', width:170, templet:'#newsListBar',fixed:"right",align:"center"}
         ]]
     });
